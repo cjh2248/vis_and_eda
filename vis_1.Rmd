@@ -27,3 +27,61 @@ weather_df =
   select(name, id, everything())
 ```
 
+Making our first plot :-) 
+
+```{r}
+ggplot(weather_df, aes(x = tmin, y = tmax)) + 
+  geom_point()
+```
+
+
+```{r}
+weather_df |>
+  ggplot(aes(x = tmin, y = tmax)) + 
+  geom_point()
+```
+
+```{r}
+ggp_weather_scatterplot = 
+  weather_df |>
+  ggplot(aes(x = tmin, y = tmax)) + 
+  geom_point() 
+
+ggp_weather_scatterplot
+```
+
+## Fancier scatterplots
+```{r}
+weather_df |> 
+  ggplot(aes(x = tmin, y = tmax, color = name)) + 
+  geom_point(alpha = .3, size = .8) + 
+  geom_smooth(se = FALSE)
+```
+
+Where you define the aesthetics can matter. 
+```{r}
+weather_df |> 
+  ggplot(aes(x = tmin, y = tmax)) + 
+  geom_point(aes(color = name), alpha = .3, size = .8) + 
+  geom_smooth(se = FALSE)
+```
+use facetting real quick 
+
+```{r}
+weather_df |>
+  ggplot(aes(x = tmin, y = tmax, color = name)) + 
+  geom_point(alpha = .3) + 
+  geom_smooth(se = FALSE) + 
+  facet_grid(.~ name)
+```
+Let's make a somewhat more interesting scatterplot 
+
+```{r}
+weather_df |> 
+  ggplot(aes(x = date, y = tmax, color = name)) + 
+  geom_point(aes(size = prcp), alpha =.5) + 
+  geom_smooth(se = FALSE) + 
+  facet_grid(.~name)
+```
+
+

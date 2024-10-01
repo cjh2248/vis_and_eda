@@ -102,3 +102,28 @@ weather_df |>
     ## (`geom_point()`).
 
 ![](vis_2_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+
+Look at the color:
+
+``` r
+weather_df |>
+  ggplot(aes(x = tmin, y = tmax, color = name)) + 
+  geom_point(alpha = .3) + 
+  labs(
+    title = "Temperture scatterplot", 
+    x = "Minimum Temp (C)",
+    y = "Maximum Temp (C)",
+    color = "Location", 
+    caption = "Weather data taken from the rnoaa package from three stations."
+  ) + 
+  scale_color_hue(h = c(100,400)) + 
+  viridis::scale_color_viridis(discrete = TRUE)
+```
+
+    ## Scale for colour is already present.
+    ## Adding another scale for colour, which will replace the existing scale.
+
+    ## Warning: Removed 17 rows containing missing values or values outside the scale range
+    ## (`geom_point()`).
+
+![](vis_2_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->

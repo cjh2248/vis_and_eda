@@ -71,3 +71,20 @@ weather_df |>
   )
 ```
 
+Look at the color: 
+```{r}
+weather_df |>
+  ggplot(aes(x = tmin, y = tmax, color = name)) + 
+  geom_point(alpha = .3) + 
+  labs(
+    title = "Temperture scatterplot", 
+    x = "Minimum Temp (C)",
+    y = "Maximum Temp (C)",
+    color = "Location", 
+    caption = "Weather data taken from the rnoaa package from three stations."
+  ) + 
+  scale_color_hue(h = c(100,400)) + 
+  viridis::scale_color_viridis(discrete = TRUE)
+```
+
+

@@ -6,6 +6,7 @@ date: "2024-09-26"
 
 ```{r setup, include=FALSE}
 library(tidyverse)
+library(ggridges)
 ```
 
 Import the weather data. 

@@ -31,5 +31,9 @@ weather_df =
 weather_df
 ```
 
+```{r}
+weather_df |>
+  group_by(name, month)
+```
 
 

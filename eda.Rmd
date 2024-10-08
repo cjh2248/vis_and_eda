@@ -43,4 +43,11 @@ weather_df |>
   group_by(month) |>
   summarize(n_obs = n())
 ```
+**NEVER** use base R's 'table' 
+
+```{r, eval = FALSE}
+weather_df |> 
+  pull(month) |> 
+  table()
+```
 

@@ -124,3 +124,11 @@ weather_df |>
     ##  9 2021-09-01    90
     ## 10 2021-10-01    93
     ## # ℹ 14 more rows
+
+**NEVER** use base R’s ‘table’
+
+``` r
+weather_df |> 
+  pull(month) |> 
+  table()
+```

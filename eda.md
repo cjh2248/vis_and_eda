@@ -99,3 +99,28 @@ weather_df |>
     ##  9 CentralPark_NY USW00094728 2021-01-09     0   2.8  -4.3 2021-01-01
     ## 10 CentralPark_NY USW00094728 2021-01-10     0   5    -1.6 2021-01-01
     ## # ℹ 2,180 more rows
+
+## counting things
+
+counting month observations
+
+``` r
+weather_df |> 
+  group_by(month) |>
+  summarize(n_obs = n())
+```
+
+    ## # A tibble: 24 × 2
+    ##    month      n_obs
+    ##    <date>     <int>
+    ##  1 2021-01-01    93
+    ##  2 2021-02-01    84
+    ##  3 2021-03-01    93
+    ##  4 2021-04-01    90
+    ##  5 2021-05-01    93
+    ##  6 2021-06-01    90
+    ##  7 2021-07-01    93
+    ##  8 2021-08-01    93
+    ##  9 2021-09-01    90
+    ## 10 2021-10-01    93
+    ## # ℹ 14 more rows

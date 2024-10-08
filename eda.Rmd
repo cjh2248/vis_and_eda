@@ -36,4 +36,11 @@ weather_df |>
   group_by(name, month)
 ```
 
+## counting things 
+counting month observations
+```{r}
+weather_df |> 
+  group_by(month) |>
+  summarize(n_obs = n())
+```
 

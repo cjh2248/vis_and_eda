@@ -138,5 +138,11 @@ weather_df |>
   mutate(temp_rank = min_rank(tmax)) |> 
   filter(temp_rank == 1)
 ```
+lag 
+```{r}
+weather_df |> 
+  group_by(name) |> 
+  mutate(lag_temp = lag(tmax, 5))
+```
 
 
